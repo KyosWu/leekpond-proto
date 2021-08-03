@@ -1,0 +1,23 @@
+syntax = "proto3";  // 指定proto版本
+package EastMoney;  // 指定默认包名
+
+// 指定golang包名
+option go_package = "./;eastMoney";
+
+// 定义天天基金服务
+service EastMoney {
+  // 从天天基金获取所有基金信息
+  rpc getAllFundCodeInfo(getAllFundCodeInfoRequest) returns (getAllFundCodeInfoResponse) {}
+}
+
+// HelloRequest 请求结构
+message getAllFundCodeInfoRequest {
+}
+
+message fundCodeList {
+
+}
+// HelloResponse 响应结构
+message getAllFundCodeInfoResponse {
+  repeated fundCodeList fundCodeList = 1;
+}
